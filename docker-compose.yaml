@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  openvpn:
+    image: pankajthakur888/openvpn:latest
+    container_name: openvpn
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194/tcp"
+    volumes:
+      - /root/openvpn/openvpn-data:/etc/openvpn
+    restart: unless-stopped 
